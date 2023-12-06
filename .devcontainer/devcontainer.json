@@ -1,0 +1,35 @@
+{
+  "name": "Basic Node.js",
+  "build": { "dockerfile": "Dockerfile" },
+  "remoteUser": "node",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+		"vscode": {
+		  "extensions": [
+				"sdras.vue-vscode-snippets",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"formulahendry.auto-rename-tag",
+				"formulahendry.auto-close-tag",
+				"xabikos.JavaScriptSnippets",
+				"Vue.volar",
+				"octref.vetur"
+			],
+			"settings": {
+				"editor.tabSize": 2,
+				"editor.formatOnSave": false,
+				"editor.codeActionsOnSave": {
+					"source.fixAll.eslint": true
+				},
+				"eslint.probe": ["javascript", "typescript", "html", "vue", "markdown"],
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"auto-close-tag.activationOnLanguage": [
+					"javascript", "typescript", "html", "vue", "markdown"
+				],
+				"auto-rename-tag.activationOnLanguage": ["*"]
+			}
+		}
+	}
+}
