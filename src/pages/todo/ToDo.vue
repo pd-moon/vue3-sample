@@ -4,7 +4,6 @@
       <Draggable
         v-model="sortableList"
         v-bind="{ animation: 200 }"
-        :group="{ name: 'sortableList', pull: 'clone', put: false }"
         ghost-class="ghost"
         handle=".drag-handle"
         item-key="uq"
@@ -12,13 +11,19 @@
         <template #item="{ element }">
           <v-list-item v-ripple="{ class: 'text-secondary' }" class="sortable-item">
             <div class="d-flex align-center justify-space-between">
-              <div class="d-flex align-center item__header">
-                <p class="ma-0 drag-handle" style="width: 130px">
+              <div class="d-flex align-center sortable-item__header">
+                <p class="ma-0 drag-handle sortable-item__handle">
                   <v-icon class="mr-2">mdi-menu</v-icon>
                   <span>{{ element.name }}</span>
                 </p>
-                <span class="mx-1">ㅣ</span>
-                <span>{{ element.text }}</span>
+                <span class="mx-2">ㅣ</span>
+                <p class="ma-0">
+                  <span>{{ element.text }}</span>
+                </p>
+                <span class="mx-2">ㅣ</span>
+                <p class="ma-0">
+                  <span>{{ $filters.numberFormat(element.price) }} 원</span>
+                </p>
               </div>
 
               <div class="item__icons">
@@ -74,10 +79,17 @@ getToDoList(10)
 
 <style scoped>
 .sortable-item {
+  background-color: var(--vt-c-white);
   border: 1px solid black;
   border-radius: 4px;
 
   margin-bottom: 8px;
+}
+
+.sortable-item__handle {
+  min-width: 130px;
+  max-width: 180px;
+  width: 30%;
 }
 
 .ghost {

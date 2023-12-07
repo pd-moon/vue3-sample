@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="344" variant="outlined">
+  <v-card class="to-do mx-auto" variant="outlined">
     <v-card-item>
       <div>
         <div class="text-overline mb-1">ToDo Card</div>
@@ -29,3 +29,9 @@ const props = defineProps({
 
 const { toDo } = props
 </script>
+
+<style scoped>
+.to-do {
+  background-color: var(--vt-c-white);
+}
+</style>
