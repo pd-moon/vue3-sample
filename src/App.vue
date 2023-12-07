@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <Suspense>
     <RouterView />
-  </div>
+  </Suspense>
 </template>
 
 <script setup>

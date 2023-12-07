@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import filters from './filters'
 
 // vuetify
 import 'vuetify/styles'
@@ -23,5 +24,7 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(vuetify)
+
+app.config.globalProperties.$filters = filters
 
 app.mount('#app')

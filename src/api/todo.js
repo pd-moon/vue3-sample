@@ -7,6 +7,7 @@ export const getData = (length) => {
           id: index,
           name: `No.${index}${index}${index}`,
           text: `${index}abcdefgh${index}`,
+          price: 2345678 * index,
         })
       }
 
