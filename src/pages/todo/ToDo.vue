@@ -54,9 +54,26 @@
 import { ref } from 'vue'
 import { useToDoStore } from '@/stores/todo'
 import { storeToRefs } from 'pinia'
+import { useMeta } from 'vue-meta'
 
 import Draggable from 'vuedraggable'
 import ToDoCard from '@/components/todo/ToDoCard.vue'
+
+useMeta({
+  title: 'To Do 페이지',
+  meta: [
+    {
+      vmid: 'og:title',
+      property: 'og:title',
+      content: 'my to-do',
+    },
+    {
+      vmid: 'og:description',
+      property: 'og:description',
+      content: 'to-do 리스트 테스트 페이지',
+    },
+  ],
+})
 
 const toDoStore = useToDoStore()
 const { toDoList } = storeToRefs(toDoStore)
