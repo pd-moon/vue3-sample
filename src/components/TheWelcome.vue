@@ -9,6 +9,7 @@ import SupportIcon from './icons/IconSupport.vue'
 
 <template>
   <WelcomeItem>
+    <router-link to="todo">move to To-Do</router-link>
     <template #icon>
       <DocumentationIcon />
     </template>

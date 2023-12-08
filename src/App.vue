@@ -1,9 +1,14 @@
 <template>
   <div>
     <metainfo></metainfo>
-    <Suspense>
-      <RouterView />
-    </Suspense>
+    <RouterView v-slot="{ Component }">
+      <Suspense>
+        <component :is="Component" :key="$route.path"></component>
+        <template #fallback>
+          <div>Loading...</div>
+        </template>
+      </Suspense>
+    </RouterView>
   </div>
 </template>
 
@@ -20,12 +25,14 @@ useMeta({
     {
       vmid: 'og:title',
       property: 'og:title',
+      name: 'og:title',
       content: 'vue3 sample !',
     },
     {
       vmid: 'og:description',
       property: 'og:description',
-      content: 'vue3 연습용 페이지입니다.',
+      name: 'og:description',
+      content: 'vue3 연습&배포 프로젝트입니다.',
     },
   ],
 })
